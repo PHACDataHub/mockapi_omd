@@ -14,8 +14,6 @@ It would therefore be ideal for the two systems to come up with an automated way
 1)	Fetch data points as per their requirements without having to filter out the excessive data returned by the server or having to make additional API calls to get the required data.
 2)	Rename the data fields as per their suitability , in the API response without making any code changes.
 
-
-
 ### Mock API for rendering dummy data
 
 Included in this repo is a small application that demonstartes provisioning dummy data for isolates and clusters using GraphQL.
@@ -26,3 +24,15 @@ Alternatively docker image can be built locally using the Dockerfile available i
 
 This command builds an image locally with a name mockapi and version 1.0 which can then be run as :- ` sudo docker run -d -p 8000:8080 mockapi:1.0`
 After this the application can be accessed at:- http://localhost:8000/
+
+The API in it’s current version uses mock data to answers some of the following queries. This mock data tries to resemble the actual data format as closely as possible :
+
+•	Listing all the clusters between a set of start date and end date.
+
+•	Fetch a cluster and isolate by it’s ID.
+
+•	List all the isolates after a certain isolation date.
+
+•	List all the clusters and isolates to which a certain pathogen is a part of.
+
+Note: The demo API is currently deployed on Google cloud using cloud run service and here is the link to it’s Git Hub repo: PHACDataHub/mockapi_omd (github.com)
